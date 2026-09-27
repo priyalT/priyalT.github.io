@@ -1,14 +1,86 @@
-<header class="navbar">
+<header class="surface py-4">
+  <nav class="flex justify-between items-center w-[90%] mx-auto">
 
-  <a class="logo" href="{{ '/' | relative_url }}">
-    PT
-  </a>
+    <div class="flex items-center gap-20">
+      <a href="{{ '/' | relative_url }}" class="w-16">
+        <img src="../assets/logo.png" alt="Logo">
+      </a>
+      <a href="{{ '/' | relative_url }}" class="w-28 flex items-center">
+        <img src="../assets/title.png" alt="Title">
+      </a>
+    </div>
 
-  <nav>
-    <a href="{{ '/' | relative_url }}">Home</a>
-    <a href="{{ '/research/' | relative_url }}">Research</a>
-    <a href="{{ '/projects/' | relative_url }}">Projects</a>
-    <a href="{{ '/cv/' | relative_url }}">CV</a>
+    <div class="nav-links duration-500 md:static absolute md:min-h-fit min-h-[60vh] 
+                left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
+      <ul class="flex md:flex-row flex-col md:items-center md:gap-[5vw] gap-8"> 
+        
+        <li>
+          <a href="{{ '/' | relative_url }}" class="typewriter-box">
+            <span class="prompt">&gt;</span>
+            <span id="typewriter-text"></span><span class="typewriter-cursor">_</span>
+          </a>
+        </li>
+
+        <li> <a class="retro-yellow-box" href="{{ '/' | relative_url }}"> Home </a> </li>
+        <li> <a class="retro-yellow-box" href="{{ '/research/' | relative_url }}"> Research </a> </li>
+        <li> <a class="retro-yellow-box" href="{{ '/projects/' | relative_url }}"> Projects </a> </li>
+        <li> <a class="retro-yellow-box" href="{{ '/cv/' | relative_url }}"> CV </a> </li>
+      </ul>
+    </div>
   </nav>
-
 </header>
+
+<script>
+  (function () {
+    const phrases = [
+      "Hi, I'm Priyal!",
+      "Welcome to my lab.",
+      "Our experiments will include",
+      "Spatial Omics",
+      "RNA-seq",
+      "Research Software",
+      "Open Source",
+      "Have fun!"
+    ];
+
+    let phraseIdx = 0;
+    let charIdx = 0;
+    let isDeleting = false;
+    const typingSpeed = 80;
+    const deletingSpeed = 45;
+    const pauseBeforeDelete = 1600;
+
+    function loopTypewriter() {
+      const currentPhrase = phrases[phraseIdx];
+      const target = document.getElementById("typewriter-text");
+      if (!target) return;
+
+      if (isDeleting) {
+        target.textContent = currentPhrase.substring(0, charIdx - 1);
+        charIdx--;
+      } else {
+        target.textContent = currentPhrase.substring(0, charIdx + 1);
+        charIdx++;
+      }
+
+      let delay = isDeleting ? deletingSpeed : typingSpeed;
+
+      if (!isDeleting && charIdx === currentPhrase.length) {
+        delay = pauseBeforeDelete;
+        isDeleting = true;
+      } else if (isDeleting && charIdx === 0) {
+        isDeleting = false;
+        phraseIdx = (phraseIdx + 1) % phrases.length;
+        delay = 400;
+      }
+
+      setTimeout(loopTypewriter, delay);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", loopTypewriter);
+    } else {
+      loopTypewriter();
+    }
+  })();
+</script>

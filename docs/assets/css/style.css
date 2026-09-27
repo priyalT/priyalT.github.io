@@ -1,16 +1,103 @@
 :root {
-  --background: #91c6fe;
-  --surface: #e67fd8;
-  --text: #a8adb3;
-  --muted: #6a7c8e;
-  --accent: #1a243b;
-  --border: #26313a;
+  --background: #90c2e8;
+  --surface: 
+
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.15) 0px,
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+
+    linear-gradient(
+      180deg,
+      #f2a9e9 0%,
+      #e696db 12%,
+      #d382bf 50%,
+      #c85ca2 100%
+    );
+
+  --text: #010101;
+  --muted: #985d19;
+  --accent: #010101;
+  --border: #010101;
 
   --max-width: 1100px;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.surface {
+  background: var(--surface);
+}
+
+.retro-yellow-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  background: linear-gradient(180deg, #fff775 0%, #f6d968 50%, #f0c51c 100%);
+  color: #1a1a1a !important;
+  font-family: "Tahoma", "Courier New", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none !important;
+  letter-spacing: 0.5px;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #806600;
+  border-bottom: 2px solid #806600;
+  border-radius: 15px;
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  user-select: none;
+}
+
+.retro-yellow-box:hover {
+  filter: brightness(1.08);
+  text-decoration: none !important;
+}
+
+.retro-yellow-box:active {
+  border-top: 2px solid #806600;
+  border-left: 2px solid #806600;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: translate(1px, 1px);
+}
+
+.typewriter-box {
+  display: inline-flex;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  text-decoration: none !important;
+  min-height: 28px;
+  min-width: 270px;
+}
+
+.typewriter-box .prompt {
+  color: #90c2e8;
+  margin-right: 7px;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  font-weight: 900;
+  margin-left: 2px;
+  animation: retro-blink 0.8s steps(2, start) infinite;
+}
+
+@keyframes retro-blink {
+  to {
+    visibility: hidden;
+  }
 }
 
 body {
