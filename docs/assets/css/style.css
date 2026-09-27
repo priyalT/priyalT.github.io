@@ -1,9 +1,9 @@
 :root {
-  --background: #abc6e8;
-  --surface: #111820;
-  --text: #484c50;
-  --muted: #8b98a5;
-  --accent: #62d9c7;
+  --background: #91c6fe;
+  --surface: #e67fd8;
+  --text: #a8adb3;
+  --muted: #6a7c8e;
+  --accent: #1a243b;
   --border: #26313a;
 
   --max-width: 1100px;

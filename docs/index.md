@@ -14,8 +14,7 @@ title: Home
   </h1>
 
   <p class="hero-description">
-    I work at the intersection of biology, computation,
-    and machine learning.
+    Hi! I am Priyal. I work at the intersection of bioinformatics and machine learning.
   </p>
 
   <div class="links">
@@ -28,7 +27,7 @@ title: Home
 </section>
 
 
-<section>
+<!-- <section>
 
   <h2>Research</h2>
 
@@ -63,4 +62,4 @@ title: Home
 
   </div>
 
-</section>
+</section> -->
