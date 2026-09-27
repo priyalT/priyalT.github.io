@@ -1,29 +1,23 @@
 :root {
   --background: #90c2e8;
-  --surface: 
-
-    repeating-linear-gradient(
-      0deg,
+  --surface:
+    repeating-linear-gradient(0deg,
       rgba(0, 0, 0, 0.15) 0px,
       rgba(0, 0, 0, 0.15) 1px,
       transparent 1px,
-      transparent 2px
-    ),
+      transparent 2px),
 
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       #f2a9e9 0%,
       #e696db 12%,
       #d382bf 50%,
-      #c85ca2 100%
-    );
+      #c85ca2 100%);
 
   --text: #010101;
   --muted: #985d19;
   --accent: #010101;
   --border: #010101;
-
-  --max-width: 1100px;
+  --max-width: 100%;
 }
 
 * {
@@ -100,9 +94,92 @@
   }
 }
 
+.desktop-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  padding-top: 50px;
+}
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  padding: 6px 4px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none !important;
+  user-select: none;
+  background: transparent;
+
+}
+
+.desktop-icon img {
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+  margin-bottom: 2px;
+  filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.4));
+}
+
+.desktop-icon span {
+  font-family: "Tahoma", "Segoe UI", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 1px 1px 2px #000000, 0 0 1px #000000;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.desktop-icon:hover {
+  background: rgba(49, 106, 197, 0.35);
+  border: 1px dotted rgba(255, 255, 255, 0.6);
+}
+
+.desktop-icon:active {
+  background: rgba(49, 106, 197, 0.7);
+}
+
+
+.desktop-workspace {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 140px);
+  display: flex;
+  align-items: center;
+}
+
+.desktop-workspace .window {
+  position: absolute;
+  min-width: 340px;
+  max-width: 90vw;
+  z-index: 10;
+  cursor: default;
+}
+
+.desktop-workspace .title-bar {
+  cursor: move;
+}
+
+.desktop-workspace .window.hidden {
+  display: none !important;
+}
+
 body {
   margin: 0;
+  padding-top: 80px;
+  /* Clears the fixed top navbar */
   background: var(--background);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+
   color: var(--text);
 
   font-family:
@@ -117,8 +194,9 @@ body {
 
 main {
   max-width: var(--max-width);
+  min-height: calc(100vh - 140px);
   margin: auto;
-  padding: 80px 24px;
+  padding: 0 24px;
 }
 
 a {
