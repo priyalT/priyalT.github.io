@@ -88,7 +88,7 @@ title: Home
         <div>
           <span style="color: #0b4cb4; font-weight: bold;">Priyal:</span>
           <div style="margin: 2px 0 0 6px; background: #eef5ff; padding: 6px 10px; border-radius: 4px; border: 1px solid #d0e2ff; display: inline-block;">
-            Take a look around! Click the <strong>Projects</strong> folder on the desktop to see my projects, or check out my <strong>CV</strong>. I'd love to hear from you too! Click the <strong>Email</strong> to reach out to me and build cool things together.
+            Take a look around! Click the <strong>Projects</strong> folder on the desktop to see my projects, or check out my <a href="https://drive.google.com/file/d/14ZViGZw54LSQhn7V4355_lZlt7oPhui6/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="color: #0b4cb4; font-weight: bold; text-decoration: underline;">CV ↗</a>. I'd love to hear from you too! Click the <strong>Email</strong> to reach out to me and build cool things together.
           </div>
         </div>
 
@@ -155,9 +155,9 @@ title: Home
     </div>
     <div class="window-body">
       <p><strong>Priyal Tripathi — Resume / CV</strong></p>
-      <p>Education, research experience, and publications.</p>
+      <p>Education, research experience, and more.</p>
       <div style="margin-top: 14px;">
-        <a class="retro-yellow-box" href="{{ '/cv/' | relative_url }}">Open CV Document ↗</a>
+        <a class="retro-yellow-box" href="https://drive.google.com/file/d/14ZViGZw54LSQhn7V4355_lZlt7oPhui6/view?usp=sharing" target="_blank" rel="noopener noreferrer">Open CV↗</a>
       </div>
     </div>
     <div class="status-bar">

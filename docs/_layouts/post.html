@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="academic-container">
+  <nav class="blog-back-nav">
+    <a href="{{ '/blog/' | relative_url }}">← Back to all posts</a>
+  </nav>
+
+  <article class="academic-post">
+    <header class="post-header">
+      <time class="post-date">{{ page.date | date: "%B %d, %Y" }}</time>
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% if page.description %}
+        <p class="post-subtitle">{{ page.description }}</p>
+      {% endif %}
+      {% if page.tags %}
+        <div class="post-tags">
+          {% for tag in page.tags %}
+            <span class="tag">#{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </header>
+
+    <div class="post-body">
+      {{ content }}
+    </div>
+  </article>
+</div>

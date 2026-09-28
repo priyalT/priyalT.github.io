@@ -261,6 +261,9 @@ body::before {
 body {
   margin: 0;
   padding-top: 80px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: var(--background);
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
@@ -274,9 +277,10 @@ body {
 
 main {
   max-width: var(--max-width);
-  min-height: calc(100vh - 140px);
   margin: auto;
   padding: 0 24px;
+  flex: 1;
+  width: 100%;
 }
 
 a {
@@ -333,4 +337,202 @@ a:hover {
   margin-top: 6px;
   text-align: center;
   word-break: break-all;
+}
+
+
+.academic-container {
+  max-width: 760px;
+  margin: 30px auto 80px auto;
+  background: #ffffff;
+  padding: 44px 48px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+@media (max-width: 640px) {
+  .academic-container {
+    padding: 24px 18px;
+    margin: 16px auto;
+  }
+}
+
+.blog-index-header h1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.blog-index-header p {
+  color: #475569;
+  font-size: 15px;
+  margin: 0 0 28px 0;
+  line-height: 1.6;
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 24px;
+}
+
+.post-item {
+  display: flex;
+  gap: 24px;
+  align-items: baseline;
+}
+
+@media (max-width: 600px) {
+  .post-item {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+.post-item-date {
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  color: #64748b;
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+.post-item-title {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.post-item-title a {
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.post-item-title a:hover {
+  color: #0055ea;
+  text-decoration: underline;
+}
+
+.post-item-desc {
+  margin: 0 0 8px 0;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.post-item-tags, .post-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.blog-back-nav {
+  margin-bottom: 24px;
+}
+
+.blog-back-nav a {
+  color: #0055ea;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.blog-back-nav a:hover {
+  text-decoration: underline;
+}
+
+.post-header {
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 20px;
+  margin-bottom: 32px;
+}
+
+.post-date {
+  font-size: 13px;
+  color: #64748b;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.post-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.post-subtitle {
+  font-size: 17px;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 14px 0;
+}
+
+.post-body {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #1e293b;
+}
+
+.post-body p {
+  margin: 1.4em 0;
+}
+
+.post-body h2, .post-body h3 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #0f172a;
+  margin-top: 1.8em;
+  margin-bottom: 0.6em;
+}
+
+.post-body blockquote {
+  margin: 1.6em 0;
+  padding: 0 18px;
+  border-left: 3px solid #0055ea;
+  color: #475569;
+  font-style: italic;
+}
+
+.post-body pre, .post-body code {
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+}
+
+.post-body code {
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #0f172a;
+}
+
+.post-body pre {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 16px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.post-body pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
 }
