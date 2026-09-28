@@ -130,11 +130,11 @@ title: Home
       <p>Blogs</p>
       
       <div style="background: #fff; border: 1px solid #7f9db9; padding: 8px; margin-bottom: 8px;">
-        <strong>Bulk RNA-seq Analysis</strong>
+        <strong> <a href="2026/09/28/spatial-transcriptomics-qc.html"> Bulk RNA-seq Analysis </a></strong>
         <p style="margin: 4px 0 0 0; font-size: 11px; color: #444;">Bulk RNA-seq analysis tutorial: from raw reads to gene set enrichment analysis</p>
       </div>
       <div style="background: #fff; border: 1px solid #7f9db9; padding: 8px; margin-bottom: 8px;">
-        <strong> BioSeq</strong>
+        <strong><a href="jekyll/update/2026/09/27/welcome-to-jekyll.html"> BioSeq </a></strong>
         <p style="margin: 4px 0 0 0; font-size: 11px; color: #444;">A bioinformatics tool based in Python for sequence pre-processing and statistics.</p>
       </div>
     </div>
