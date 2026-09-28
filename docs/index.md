@@ -6,24 +6,31 @@ title: Home
 
   <div class="desktop-grid">
     <button class="desktop-icon" id="icon-pc">
-      <img src="{{ '/assets/pc.png' | relative_url }}" alt="Priyal's PC">
+      <img src="{{ '/assets/images/pc.png' | relative_url }}" alt="Priyal's PC">
       <span>Priyal's PC</span>
     </button>
     <button class="desktop-icon" id="icon-projects">
-      <img src="{{ '/assets/projects.png' | relative_url }}" alt="Projects">
-      <span>Projects</span>
+      <img src="{{ '/assets/images/projects.png' | relative_url }}" alt="Projects">
+      <span>Blog posts</span>
     </button>
     <button class="desktop-icon" id="icon-cv">
-      <img src="{{ '/assets/cv.png' | relative_url }}" alt="CV">
+      <img src="{{ '/assets/images/cv.png' | relative_url }}" alt="CV">
       <span>CV</span>
     </button>
     <button class="desktop-icon" id="icon-recycle">
-      <img src="{{ '/assets/recycle_bin.png' | relative_url }}" alt="Recycle Bin">
+      <img src="{{ '/assets/images/recycle_bin.png' | relative_url }}" alt="Recycle Bin">
       <span>Recycle Bin</span>
     </button>
   </div>
 
-  <div class="window active" id="win-pc" style="top: 20px; left: 240px; width: 560px;">
+  <div class="desktop-mascot">
+    <div class="mascot-bubble">
+      Click around to explore! 🧬
+    </div>
+    <img src="{{ '/assets/images/character.png' | relative_url }}" alt="Mascot Character" class="mascot-img">
+  </div>
+
+  <div class="window hidden" id="win-pc" style="top: 20px; left: 240px; width: 560px;">
     <div class="title-bar">
       <div class="title-bar-text">Priyal - Windows Messenger</div>
       <div class="title-bar-controls">
@@ -110,33 +117,29 @@ title: Home
     </div>
   </div>
 
-  <div class="window hidden" id="win-projects" style="top: 80px; left: 340px; width: 480px;">
+  <div class="window hidden" id="win-blog" style="top: 80px; left: 340px; width: 480px;">
     <div class="title-bar">
-      <div class="title-bar-text">📁 Research Projects - C:\Lab\Projects</div>
+      <div class="title-bar-text">Research Projects - C:\Lab\Projects</div>
       <div class="title-bar-controls">
-        <button aria-label="Minimize" data-minimize="win-projects"></button>
+        <button aria-label="Minimize" data-minimize="win-blog"></button>
         <button aria-label="Maximize"></button>
-        <button aria-label="Close" data-close="win-projects"></button>
+        <button aria-label="Close" data-close="win-blog"></button>
       </div>
     </div>
     <div class="window-body">
-      <p>Active research pipelines & plots:</p>
+      <p>Blogs</p>
       
       <div style="background: #fff; border: 1px solid #7f9db9; padding: 8px; margin-bottom: 8px;">
-        <strong>🔬 01. Spatial Transcriptomics QC</strong>
-        <p style="margin: 4px 0 0 0; font-size: 11px; color: #444;">Computational approaches for spatial omics data quality control.</p>
+        <strong>Bulk RNA-seq Analysis</strong>
+        <p style="margin: 4px 0 0 0; font-size: 11px; color: #444;">Bulk RNA-seq analysis tutorial: from raw reads to gene set enrichment analysis</p>
       </div>
       <div style="background: #fff; border: 1px solid #7f9db9; padding: 8px; margin-bottom: 8px;">
-        <strong>🧬 02. Cancer Biomarker Discovery</strong>
-        <p style="margin: 4px 0 0 0; font-size: 11px; color: #444;">Machine learning models applied to sequencing data.</p>
-      </div>
-      <div style="background: #fff; border: 1px solid #7f9db9; padding: 8px;">
-        <strong>💻 03. Biological Machine Learning</strong>
-        <p style="margin: 4px 0 0 0; font-size: 11px; color: #444;">Tree-based and deep learning architectures for biological datasets.</p>
+        <strong> BioSeq</strong>
+        <p style="margin: 4px 0 0 0; font-size: 11px; color: #444;">A bioinformatics tool based in Python for sequence pre-processing and statistics.</p>
       </div>
     </div>
     <div class="status-bar">
-      <p class="status-bar-field">3 item(s)</p>
+      <p class="status-bar-field">2 item(s)</p>
     </div>
   </div>
 
@@ -163,7 +166,7 @@ title: Home
   </div>
 
 
-  <div class="window hidden" id="win-recycle" style="top: 160px; left: 300px; width: 340px;">
+  <div class="window active" id="win-recycle" style="top: 40px; left: 200px; width: 640px; max-width: 92vw;">
     <div class="title-bar">
       <div class="title-bar-text">Recycle Bin</div>
       <div class="title-bar-controls">
@@ -172,11 +175,47 @@ title: Home
         <button aria-label="Close" data-close="win-recycle"></button>
       </div>
     </div>
-    <div class="window-body" style="text-align: center; padding: 20px;">
-      <p style="color: #666; font-style: italic;">The Recycle Bin is empty.</p>
+
+    <div style="background: #ece9d8; border-bottom: 1px solid #d4d0c8; padding: 4px 8px; font-family: 'Tahoma', sans-serif; font-size: 11px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #666;">Address:</span>
+      <div style="background: #fff; border: 1px solid #7f9db9; padding: 2px 6px; flex: 1; border-radius: 2px;">
+        📁 C:\Recycle Bin\Photos
+      </div>
     </div>
+
+    <div class="window-body" style="padding: 10px;">
+      <p style="margin: 0 0 10px 0; font-size: 12px; color: #475569;">
+        Things I couldn't bring myself to permanently delete :3
+      </p>
+
+      <div class="recycle-gallery">
+        
+        <div class="photo-card">
+          <img src="{{ '/assets/images/recycle_bin/cabin_view.png' | relative_url }}" alt="Photo 1">
+          <span>cabin_view.jpg</span>
+        </div>
+
+        <div class="photo-card">
+          <img src="{{ '/assets/images/recycle_bin/oscar.jpg' | relative_url }}" alt="Photo 2">
+          <span>oscar_book.jpg</span>
+        </div>
+
+        <div class="photo-card">
+          <img src="{{ '/assets/images/recycle_bin/dumplings.jpg' | relative_url }}" alt="Photo 3">
+          <span>dumplings.jpg</span>
+        </div>
+
+        <div class="photo-card">
+          <img src="{{ '/assets/images/recycle_bin/oscu.jpg' | relative_url }}" alt="Photo 4">
+          <span>oscar.jpg</span>
+        </div>
+
+      </div>
+    </div>
+
     <div class="status-bar">
-      <p class="status-bar-field">0 items</p>
+      <p class="status-bar-field">4 object(s)</p>
+      <p class="status-bar-field">Disk space: 14.8 MB</p>
     </div>
   </div>
 </div>
@@ -206,7 +245,7 @@ title: Home
       });
     }
     bindIcon("icon-pc", "win-pc");
-    bindIcon("icon-projects", "win-projects");
+    bindIcon("icon-projects", "win-blog");
     bindIcon("icon-cv", "win-cv");
     bindIcon("icon-recycle", "win-recycle");
     document.querySelectorAll("[data-close]").forEach(function (btn) {

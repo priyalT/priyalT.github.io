@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Projects
+title: Blog
 ---
 
-<h1>Projects</h1>
+<h1>Blog</h1>
 
 <div class="projects-grid">
 

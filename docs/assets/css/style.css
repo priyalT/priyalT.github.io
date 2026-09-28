@@ -170,10 +170,97 @@
   display: none !important;
 }
 
+.desktop-mascot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.mascot-img {
+  width: 170px;
+  height: auto;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.25));
+  animation: mascot-breathe 2s ease-in-out infinite;
+}
+
+
+.mascot-bubble {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid #0055ea;
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-family: "Courier New", "Tahoma", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0b2367;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 8px;
+  white-space: nowrap;
+  animation: bubble-float 3s ease-in-out infinite;
+}
+
+
+.mascot-bubble::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px 7px 0 7px;
+  border-style: solid;
+  border-color: #0055ea transparent transparent transparent;
+}
+
+.mascot-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 5px 0 5px;
+  border-style: solid;
+  border-color: #ffffff transparent transparent transparent;
+}
+
+@keyframes bubble-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes mascot-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+
+  background-image: url('../images/background.png');
+  background-position: center;
+  background-size: cover; 
+  background-repeat: no-repeat;
+
+  opacity: 0.6;
+}
+
 body {
   margin: 0;
   padding-top: 80px;
-  /* Clears the fixed top navbar */
   background: var(--background);
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
@@ -181,14 +268,7 @@ body {
   background-size: 24px 24px;
 
   color: var(--text);
-
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
 }
 
@@ -206,4 +286,51 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.recycle-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+  background: #ffffff;
+  border: 2px solid #7f9db9;
+  padding: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.photo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.photo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  border-color: #3b82f6;
+  background: #f1f5f9;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid #e2e8f0;
+}
+
+.photo-card span {
+  font-family: "Tahoma", sans-serif;
+  font-size: 11px;
+  color: #334155;
+  margin-top: 6px;
+  text-align: center;
+  word-break: break-all;
 }
