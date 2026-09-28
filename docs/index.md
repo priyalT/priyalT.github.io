@@ -166,7 +166,7 @@ title: Home
   </div>
 
 
-  <div class="window active" id="win-recycle" style="top: 40px; left: 200px; width: 640px; max-width: 92vw;">
+  <div class="window hidden" id="win-recycle" style="top: 40px; left: 200px; width: 640px; max-width: 92vw;">
     <div class="title-bar">
       <div class="title-bar-text">Recycle Bin</div>
       <div class="title-bar-controls">
