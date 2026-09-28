@@ -134,10 +134,12 @@ title: Home
     <div class="window-body">
       <p style="margin: 0 0 8px 0; font-weight: bold;">Research work</p>
       
-      <div style="background: #fff; border: 1px solid #7f9db9; padding: 8px; margin-bottom: 8px;">
-        <strong> <a href="{{ '2025-02-10-breast-cancer-transcriptomics-cohorts.md' | relative_url }}"> Breast Cancer Transcriptomics In Different Cohorts </a></strong>
-        <p style="margin: 4px 0 0 0; font-size: 11px; color: #444;">Comparative transcriptomic analysis across TCGA (n=815) and Indian cohorts (n=81), identifying CFH, DST, and COPZ2 as candidate universal biomarkers across subtypes</p>
-      </div>
+      {% for post in site.research_posts limit: 3 %}
+        <div style="background: #fff; border: 1px solid #7f9db9; padding: 8px; margin-bottom: 8px;">
+          <strong> <a href="{{ post.url | relative_url }}"> {{ post.title }} </a></strong>
+          <p style="margin: 4px 0 0 0; font-size: 11px; color: #444;">{{ post.description }}</p>
+        </div>
+      {% endfor %}
       <div style="margin-top: 12px; display: flex; gap: 8px;">
         <a class="retro-yellow-box" href="{{ '/research/' | relative_url }}">All Research ↗</a>
       </div>
@@ -159,10 +161,16 @@ title: Home
     <div class="window-body">
       <p style="margin: 0 0 8px 0; font-weight: bold;">Recent Notes &amp; Writing</p>
       
-      <div style="background: #fff; border: 1px solid #7f9db9; padding: 8px; margin-bottom: 8px;">
-        <strong> <a href="{{ '/2026/09/28/spatial-transcriptomics-qc.html' | relative_url }}"> Computational QC in Spatial Transcriptomics </a></strong>
-        <p style="margin: 4px 0 0 0; font-size: 11px; color: #444;">A practical breakdown of spot filtering, mitochondrial thresholds, and artifact detection in 10x Visium datasets.</p>
-      </div>
+      {% for post in site.posts limit: 1 %}
+        <div style="background: #fff; border: 1px solid #7f9db9; padding: 8px; margin-bottom: 8px;">
+          <strong> <a href="{{ post.url | relative_url }}"> {{ post.title }} </a></strong>
+          <p style="margin: 4px 0 0 0; font-size: 11px; color: #444;">{{ post.description }}</p>
+        </div>
+      {% else %}
+        <div style="background: #fff; border: 1px solid #7f9db9; padding: 8px; margin-bottom: 8px; color: #64748b; font-style: italic;">
+          No posts published yet. Stay tuned!
+        </div>
+      {% endfor %}
       <div style="margin-top: 12px; display: flex; gap: 8px;">
         <a class="retro-yellow-box" href="{{ '/blog/' | relative_url }}">All Blog Posts ↗</a>
         <a class="retro-yellow-box" href="{{ '/research/' | relative_url }}">All Research ↗</a>

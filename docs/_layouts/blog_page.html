@@ -1,0 +1,68 @@
+---
+layout: default
+---
+<div class="blog-container">
+  <aside class="blog-sidebar">
+    <h3 class="sidebar-title">Table of Contents</h3>
+    
+    {% if page.layout == 'post' %}
+      <div id="toc" class="toc-container"></div>
+      <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eaeaea;" />
+    {% endif %}
+    
+    <h4 class="sidebar-subtitle">All Posts</h4>
+    <ul class="sidebar-post-list">
+      {% for p in site.posts %}
+        <li><a href="{{ p.url | relative_url }}" {% if page.url == p.url %}class="active"{% endif %}>{{ p.title }}</a></li>
+      {% endfor %}
+    </ul>
+    
+    <div style="margin-top: 30px;">
+      <a href="{{ '/blog/' | relative_url }}" class="home-link" style="font-weight: 600;">← Blog Home</a>
+    </div>
+  </aside>
+
+  <div class="blog-main-content">
+    {{ content }}
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("toc")) {
+      const content = document.querySelector(".blog-main-content");
+      const headings = content.querySelectorAll("h2, h3");
+      const toc = document.getElementById("toc");
+      
+      if (headings.length > 0) {
+        const list = document.createElement("ul");
+        headings.forEach((heading, index) => {
+          if (!heading.id) {
+            heading.id = "heading-" + index;
+          }
+          
+          // Add anchor link to the heading itself
+          const anchorLink = document.createElement("a");
+          anchorLink.href = "#" + heading.id;
+          // SVG icon for the link
+          anchorLink.innerHTML = '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="fill:currentColor;vertical-align:middle;margin-bottom:2px;"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>';
+          anchorLink.className = "heading-anchor";
+          heading.appendChild(anchorLink);
+          
+          const li = document.createElement("li");
+          li.style.marginLeft = heading.tagName === "H3" ? "15px" : "0";
+          li.style.fontSize = heading.tagName === "H3" ? "0.9rem" : "0.95rem";
+          
+          const a = document.createElement("a");
+          a.href = "#" + heading.id;
+          a.textContent = heading.textContent;
+          li.appendChild(a);
+          list.appendChild(li);
+        });
+        toc.appendChild(list);
+      } else {
+        toc.innerHTML = "<p style='color:#777; font-size:0.9rem; font-style:italic;'>No headings found.</p>";
+      }
+    }
+  });
+</script>
