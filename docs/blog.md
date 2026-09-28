@@ -7,7 +7,7 @@ permalink: /blog/
 <div class="paper">
 
   <h1 class="paper-heading">Blog</h1>
-  <p class="paper-intro">Notes on computational biology, bioinformatics pipelines, papers I've been reading, and machine learning.</p>
+  <p class="paper-intro">Notes and tutorials on computational biology, bioinformatics pipelines, tools I've been building, and research I find interesting.</p>
 
   <ul class="entry-list">
     {% for post in site.posts %}

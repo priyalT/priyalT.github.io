@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Computational Quality Control in Spatial Transcriptomics"
-date: 2026-09-28 10:00:00 +0530
-description: "A practical breakdown of spot filtering, mitochondrial thresholds, and artifact detection in 10x Visium datasets."
-tags: [spatial-omics, bioinformatics, python]
+title: "How would bulk rna-seq look like with barely 20GB of remaining storage?"
+date: 2026-09-28
+description: "An easy-to-follow tutorial on Bulk RNA-seq"
+tags: [rna-seq, bioinformatics, python]
 ---
 
-Spatial transcriptomics has revolutionized how we map gene expression within the intact morphological context of tissue sections. However, unlike dissociated single-cell RNA-sequencing (scRNA-seq), spatial assays introduce distinct technical artifacts—ranging from tissue folding and permeabilization leakage to uneven sequencing depth across slide coordinates.
+<!-- Spatial transcriptomics has revolutionized how we map gene expression within the intact morphological context of tissue sections. However, unlike dissociated single-cell RNA-sequencing (scRNA-seq), spatial assays introduce distinct technical artifacts—ranging from tissue folding and permeabilization leakage to uneven sequencing depth across slide coordinates.
 
 ## Why Standard scRNA-seq QC Falls Short
 
@@ -43,4 +43,4 @@ adata = adata[adata.obs["pct_counts_mt"] < 20].copy()
 
 ## Moving Forward
 
-Effective quality control is not about eliminating noise at the expense of biology—it is about contextualizing variance across the tissue coordinate space. In future posts, I will dive into spatial clustering benchmarks and graph neural network approaches for cell-cell interaction modeling.
+Effective quality control is not about eliminating noise at the expense of biology—it is about contextualizing variance across the tissue coordinate space. In future posts, I will dive into spatial clustering benchmarks and graph neural network approaches for cell-cell interaction modeling. -->
