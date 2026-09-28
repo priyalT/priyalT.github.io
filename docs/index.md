@@ -9,6 +9,10 @@ title: Home
       <img src="{{ '/assets/images/pc.png' | relative_url }}" alt="Priyal's PC">
       <span>Priyal's PC</span>
     </button>
+    <button class="desktop-icon" id="icon-research">
+      <img src="{{ '/assets/images/research.png' | relative_url }}" alt="Researchwork">
+      <span>Research</span>
+    </button>
     <button class="desktop-icon" id="icon-projects">
       <img src="{{ '/assets/images/projects.png' | relative_url }}" alt="Projects">
       <span>Blog posts</span>
@@ -17,11 +21,12 @@ title: Home
       <img src="{{ '/assets/images/cv.png' | relative_url }}" alt="CV">
       <span>CV</span>
     </button>
-    <button class="desktop-icon" id="icon-recycle">
-      <img src="{{ '/assets/images/recycle_bin.png' | relative_url }}" alt="Recycle Bin">
-      <span>Recycle Bin</span>
-    </button>
   </div>
+
+  <button class="desktop-icon" id="icon-recycle" style="position: fixed; bottom: 90px; right: 24px; z-index: 5;">
+    <img src="{{ '/assets/images/recycle_bin.png' | relative_url }}" alt="Recycle Bin">
+    <span>Recycle Bin</span>
+  </button>
 
   <div class="desktop-mascot">
     <div class="mascot-bubble">
@@ -114,6 +119,31 @@ title: Home
     <div class="status-bar">
       <p class="status-bar-field">Status: Online</p>
       <p class="status-bar-field">3 quick questions available</p>
+    </div>
+  </div>
+
+  <div class="window hidden" id="win-research" style="top: 80px; left: 340px; width: 480px;">
+    <div class="title-bar">
+      <div class="title-bar-text">Lab Documents - C:\Lab Results</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize" data-minimize="win-research"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close" data-close="win-research"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <p style="margin: 0 0 8px 0; font-weight: bold;">Research work</p>
+      
+      <div style="background: #fff; border: 1px solid #7f9db9; padding: 8px; margin-bottom: 8px;">
+        <strong> <a href="{{ '2025-02-10-breast-cancer-transcriptomics-cohorts.md' | relative_url }}"> Breast Cancer Transcriptomics In Different Cohorts </a></strong>
+        <p style="margin: 4px 0 0 0; font-size: 11px; color: #444;">Comparative transcriptomic analysis across TCGA (n=815) and Indian cohorts (n=81), identifying CFH, DST, and COPZ2 as candidate universal biomarkers across subtypes</p>
+      </div>
+      <div style="margin-top: 12px; display: flex; gap: 8px;">
+        <a class="retro-yellow-box" href="{{ '/research/' | relative_url }}">All Research ↗</a>
+      </div>
+    </div>
+    <div class="status-bar">
+      <p class="status-bar-field">Status: Ready</p>
     </div>
   </div>
 
@@ -248,6 +278,7 @@ title: Home
     bindIcon("icon-projects", "win-blog");
     bindIcon("icon-cv", "win-cv");
     bindIcon("icon-recycle", "win-recycle");
+    bindIcon("icon-research", "win-research");
     document.querySelectorAll("[data-close]").forEach(function (btn) {
       btn.addEventListener("click", function (e) {
         e.stopPropagation();

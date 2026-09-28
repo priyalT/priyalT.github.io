@@ -3,22 +3,55 @@ layout: default
 ---
 
 <div class="paper">
-  <a class="back-link" href="{{ '/research/' | relative_url }}">← Research</a>
+  <nav class="back-link">
+    <a href="{{ '/research/' | relative_url }}">← Back to all research</a>
+  </nav>
 
   <article>
-    <header class="article-header">
-      <h1 class="article-title">{{ page.title }}</h1>
+    <header style="margin-bottom: 32px;">
+      <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap;">
+        <time style="color: #64748b; font-size: 14px;">{{ page.date | date: "%B %d, %Y" }}</time>
+        {% if page.type %}
+          <span class="research-badge research-badge-type">{{ page.type }}</span>
+        {% endif %}
+        {% if page.venue %}
+          <span class="research-badge research-badge-venue">{{ page.venue }}</span>
+        {% endif %}
+      </div>
+
+      <h1 class="paper-heading">{{ page.title }}</h1>
+
       {% if page.authors %}
-        <p class="article-authors">{{ page.authors | replace: "Priyal Tripathi", "<strong>Priyal Tripathi</strong>" }}</p>
+        <p style="font-size: 14px; color: #475569; margin: 0 0 12px 0; line-height: 1.5;">
+          <strong style="color: #0f172a;">Authors:</strong> {{ page.authors }}
+        </p>
       {% endif %}
-      <p class="article-meta">
-        {% if page.venue %}<em>{{ page.venue }}</em>{% endif %}{% if page.venue and page.type %}. {% endif %}{{ page.type }}{% if page.venue or page.type %}, {% endif %}{{ page.date | date: "%B %Y" }}
-      </p>
-      {% assign sep = "" %}
-      {% capture links %}{% if page.paper_url and page.paper_url != "" %}<a href="{{ page.paper_url }}" target="_blank" rel="noopener noreferrer">paper</a>{% assign sep = " · " %}{% endif %}{% if page.doi %}{{ sep }}<a href="https://doi.org/{{ page.doi }}" target="_blank" rel="noopener noreferrer">doi:{{ page.doi }}</a>{% assign sep = " · " %}{% endif %}{% if page.code_url %}{{ sep }}<a href="{{ page.code_url }}" target="_blank" rel="noopener noreferrer">code</a>{% endif %}{% endcapture %}
-      {% if links != "" %}
-        <p class="article-meta">{{ links }}</p>
+
+      {% if page.description %}
+        <p class="paper-intro">{{ page.description }}</p>
       {% endif %}
+
+      {% if page.doi or page.paper_url or page.code_url %}
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; margin-bottom: 8px;">
+          {% if page.doi %}
+            <a class="retro-yellow-box" href="https://doi.org/{{ page.doi }}" target="_blank" rel="noopener noreferrer" style="font-size: 12px; padding: 4px 10px; display: inline-flex; align-items: center; gap: 4px;">
+              <span>DOI: {{ page.doi }}</span> ↗
+            </a>
+          {% endif %}
+          {% if page.paper_url and page.paper_url != "" %}
+            <a class="retro-yellow-box" href="{{ page.paper_url }}" target="_blank" rel="noopener noreferrer" style="font-size: 12px; padding: 4px 10px; display: inline-flex; align-items: center; gap: 4px;">
+              <span>Read Paper</span> ↗
+            </a>
+          {% endif %}
+          {% if page.code_url %}
+            <a class="retro-yellow-box" href="{{ page.code_url }}" target="_blank" rel="noopener noreferrer" style="font-size: 12px; padding: 4px 10px; display: inline-flex; align-items: center; gap: 4px;">
+              <span>Source Code</span> ↗
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+
+
     </header>
 
     <div class="prose">

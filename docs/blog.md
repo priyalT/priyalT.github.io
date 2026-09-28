@@ -5,24 +5,29 @@ permalink: /blog/
 ---
 
 <div class="paper">
-
-  <h1 class="paper-heading">Blog</h1>
-  <p class="paper-intro">Notes and tutorials on computational biology, bioinformatics pipelines, tools I've been building, and research I find interesting.</p>
+  <header>
+    <h1 class="paper-heading">Blog & Notes</h1>
+    <p class="paper-intro">Thoughts on computational biology, bioinformatics pipelines, paper summaries, and machine learning.</p>
+  </header>
 
   <ul class="entry-list">
     {% for post in site.posts %}
       <li class="entry">
-        <span class="entry-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <time class="entry-date">{{ post.date | date: "%b %d, %Y" }}</time>
         <div>
-          <a class="entry-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <div class="entry-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </div>
           {% if post.description %}
             <p class="entry-desc">{{ post.description }}</p>
+          {% else %}
+            <p class="entry-desc">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
           {% endif %}
+
         </div>
       </li>
     {% else %}
-      <li class="entry-empty">Nothing here yet.</li>
+      <li class="entry-empty" style="color: #64748b; font-style: italic;">No posts published yet. Stay tuned!</li>
     {% endfor %}
   </ul>
-
 </div>

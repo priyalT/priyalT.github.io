@@ -100,6 +100,10 @@
   gap: 24px;
   align-items: flex-start;
   padding-top: 50px;
+  position: fixed;
+  left: 24px;
+  top: 80px;
+  z-index: 5;
 }
 
 .desktop-icon {
