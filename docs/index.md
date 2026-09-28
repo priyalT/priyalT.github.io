@@ -106,7 +106,7 @@ title: Home
 
         <button class="retro-yellow-box" style="padding: 2px 8px; font-size: 11px;" onclick="sendContactReply()">Contact</button>
 
-        <button class="retro-yellow-box" style="padding: 2px 8px; font-size: 11px;" onclick="sendQuickReply('What is your research focus?', 'Right now I am focused on spatial transcriptomics. Previously, I have also worked in cancer biomarker discovery.')">Research</button>
+        <button class="retro-yellow-box" style="padding: 2px 8px; font-size: 11px;" onclick="sendResearchReply()">Research</button>
       </div>
 
     </div>
@@ -119,7 +119,7 @@ title: Home
 
   <div class="window hidden" id="win-blog" style="top: 80px; left: 340px; width: 480px;">
     <div class="title-bar">
-      <div class="title-bar-text">Research Projects - C:\Lab\Projects</div>
+      <div class="title-bar-text">Lab Explorer - C:\Lab</div>
       <div class="title-bar-controls">
         <button aria-label="Minimize" data-minimize="win-blog"></button>
         <button aria-label="Maximize"></button>
@@ -127,19 +127,19 @@ title: Home
       </div>
     </div>
     <div class="window-body">
-      <p>Blogs</p>
+      <p style="margin: 0 0 8px 0; font-weight: bold;">Recent Notes &amp; Writing</p>
       
       <div style="background: #fff; border: 1px solid #7f9db9; padding: 8px; margin-bottom: 8px;">
-        <strong> <a href="2026/09/28/spatial-transcriptomics-qc.html"> Bulk RNA-seq Analysis </a></strong>
-        <p style="margin: 4px 0 0 0; font-size: 11px; color: #444;">Bulk RNA-seq analysis tutorial: from raw reads to gene set enrichment analysis</p>
+        <strong> <a href="{{ '/2026/09/28/spatial-transcriptomics-qc.html' | relative_url }}"> Computational QC in Spatial Transcriptomics </a></strong>
+        <p style="margin: 4px 0 0 0; font-size: 11px; color: #444;">A practical breakdown of spot filtering, mitochondrial thresholds, and artifact detection in 10x Visium datasets.</p>
       </div>
-      <div style="background: #fff; border: 1px solid #7f9db9; padding: 8px; margin-bottom: 8px;">
-        <strong><a href="jekyll/update/2026/09/27/welcome-to-jekyll.html"> BioSeq </a></strong>
-        <p style="margin: 4px 0 0 0; font-size: 11px; color: #444;">A bioinformatics tool based in Python for sequence pre-processing and statistics.</p>
+      <div style="margin-top: 12px; display: flex; gap: 8px;">
+        <a class="retro-yellow-box" href="{{ '/blog/' | relative_url }}">All Blog Posts ↗</a>
+        <a class="retro-yellow-box" href="{{ '/research/' | relative_url }}">All Research ↗</a>
       </div>
     </div>
     <div class="status-bar">
-      <p class="status-bar-field">2 item(s)</p>
+      <p class="status-bar-field">Status: Ready</p>
     </div>
   </div>
 
@@ -320,6 +320,12 @@ title: Home
         `<a href="mailto:priyaltripathi2910@gmail.com" style="color: #0055ea; font-weight: bold; text-decoration: underline;">priyaltripathi2910@gmail.com ↗</a>`;
       
       window.sendQuickReply('I would like to introduce myself.', replyHtml);
+    };
+
+    window.sendResearchReply = function () {
+      const researchUrl = "{{ '/research/' | relative_url }}";
+      const replyHtml = 'Right now I am focused on spatial transcriptomics. Previously, I have also worked in cancer biomarker discovery and machine learning. You can explore all my publications, conference presentations, and research projects on the <a href="' + researchUrl + '" style="color: #0055ea; font-weight: bold; text-decoration: underline;">Research ↗</a> page!';
+      window.sendQuickReply('What is your research focus?', replyHtml);
     };
 
     };

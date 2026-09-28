@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+<div class="academic-container">
+  <nav class="research-back-nav">
+    <a href="{{ '/research/' | relative_url }}">← Back to all research</a>
+  </nav>
+
+  <article class="academic-post">
+    <header class="research_post-header">
+      <div class="research-meta-bar" style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap;">
+        <time class="research_post-date">{{ page.date | date: "%B %d, %Y" }}</time>
+        {% if page.type %}
+          <span class="research-badge research-badge-type">{{ page.type }}</span>
+        {% endif %}
+        {% if page.venue %}
+          <span class="research-badge research-badge-venue">{{ page.venue }}</span>
+        {% endif %}
+      </div>
+
+      <h1 class="research_post-title">{{ page.title }}</h1>
+
+      {% if page.authors %}
+        <p class="research_post-authors" style="font-size: 14px; color: #475569; margin: 0 0 12px 0; line-height: 1.5;">
+          <strong style="color: #0f172a;">Authors:</strong> {{ page.authors }}
+        </p>
+      {% endif %}
+
+      {% if page.description %}
+        <p class="research_post-subtitle">{{ page.description }}</p>
+      {% endif %}
+
+      {% if page.doi or page.paper_url or page.code_url %}
+        <div class="research-action-links" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; margin-bottom: 8px;">
+          {% if page.doi %}
+            <a class="retro-yellow-box" href="https://doi.org/{{ page.doi }}" target="_blank" rel="noopener noreferrer" style="font-size: 12px; padding: 4px 10px; display: inline-flex; align-items: center; gap: 4px;">
+              <span>DOI: {{ page.doi }}</span> ↗
+            </a>
+          {% endif %}
+          {% if page.paper_url and page.paper_url != "" %}
+            <a class="retro-yellow-box" href="{{ page.paper_url }}" target="_blank" rel="noopener noreferrer" style="font-size: 12px; padding: 4px 10px; display: inline-flex; align-items: center; gap: 4px;">
+              <span>Read Paper</span> ↗
+            </a>
+          {% endif %}
+          {% if page.code_url %}
+            <a class="retro-yellow-box" href="{{ page.code_url }}" target="_blank" rel="noopener noreferrer" style="font-size: 12px; padding: 4px 10px; display: inline-flex; align-items: center; gap: 4px;">
+              <span>Source Code</span> ↗
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if page.tags %}
+        <div class="research_post-tags" style="margin-top: 12px;">
+          {% for tag in page.tags %}
+            <span class="tag">#{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </header>
+
+    <div class="research_post-body">
+      {{ content }}
+    </div>
+  </article>
+</div>

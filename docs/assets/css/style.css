@@ -536,3 +536,243 @@ a:hover {
   color: inherit;
   padding: 0;
 }
+
+.research-index-header h1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.research-index-header p {
+  color: #475569;
+  font-size: 15px;
+  margin: 0 0 28px 0;
+  line-height: 1.6;
+}
+
+.research_post-list,
+.research_posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 24px;
+}
+
+.research_post-item,
+.research_posts-item {
+  display: flex;
+  gap: 24px;
+  align-items: baseline;
+}
+
+@media (max-width: 600px) {
+  .research_post-item,
+  .research_posts-item {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+.research_post-item-date,
+.research_posts-item-date {
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  color: #64748b;
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+.research_post-item-title,
+.research_posts-item-title {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.research_post-item-title a,
+.research_posts-item-title a {
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.research_post-item-title a:hover,
+.research_posts-item-title a:hover {
+  color: #0055ea;
+  text-decoration: underline;
+}
+
+.research_post-item-desc,
+.research_posts-item-desc {
+  margin: 0 0 8px 0;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.research_post-item-tags,
+.research_posts-item-tags,
+.research_post-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.research-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.2px;
+  vertical-align: middle;
+}
+
+.research-badge-type {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.research-badge-venue {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.research-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.research-link-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #0055ea;
+  text-decoration: none;
+  background: #eff6ff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid #bfdbfe;
+  transition: all 0.15s ease;
+}
+
+.research-link-pill:hover {
+  background: #dbeafe;
+  color: #0043b8;
+  text-decoration: none;
+}
+
+.tag {
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.research-back-nav {
+  margin-bottom: 24px;
+}
+
+.research-back-nav a {
+  color: #0055ea;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.research-back-nav a:hover {
+  text-decoration: underline;
+}
+
+.research_post-header {
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 20px;
+  margin-bottom: 32px;
+}
+
+.research_post-date {
+  font-size: 13px;
+  color: #64748b;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.research_post-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.research_post-subtitle {
+  font-size: 17px;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 14px 0;
+}
+
+.research_post-body {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #1e293b;
+}
+
+.research_post-body p {
+  margin: 1.4em 0;
+}
+
+.research_post-body h2, .research_post-body h3 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #0f172a;
+  margin-top: 1.8em;
+  margin-bottom: 0.6em;
+}
+
+.research_post-body blockquote {
+  margin: 1.6em 0;
+  padding: 0 18px;
+  border-left: 3px solid #0055ea;
+  color: #475569;
+  font-style: italic;
+}
+
+.research_post-body pre, .research_post-body code {
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+}
+
+.research_post-body code {
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #0f172a;
+}
+
+.research_post-body pre {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 16px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.research_post-body pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}

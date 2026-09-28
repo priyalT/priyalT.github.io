@@ -32,6 +32,18 @@ theme: minima
 plugins:
   - jekyll-feed
 
+collections:
+  research_posts:
+    output: true
+    permalink: /research/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: "research_posts"
+    values:
+      layout: "research"
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
