@@ -4,78 +4,35 @@ title: Research
 permalink: /research/
 ---
 
-<div class="academic-container">
+<div class="paper">
 
-  <header class="research-index-header">
-    <h1>Research & Publications</h1>
-    <p>Official publications, conference presentations, and academic research projects spanning cancer genomics, machine learning, and transcriptomics.</p>
-  </header>
+  <h1 class="paper-heading">Research</h1>
+  <p class="paper-intro">Publications, conference presentations, and research projects in cancer genomics, transcriptomics, and machine learning.</p>
 
-  <div class="research_post-list">
+  <ul class="entry-list">
     {% assign sorted_research = site.research_posts | sort: 'date' | reverse %}
     {% for item in sorted_research %}
-      <article class="research_post-item">
-        <time class="research_post-item-date">{{ item.date | date: "%b %d, %Y" }}</time>
-        <div class="research_post-item-content" style="flex: 1;">
-          
-          <div style="display: flex; gap: 6px; align-items: center; margin-bottom: 6px; flex-wrap: wrap;">
-            {% if item.type %}
-              <span class="research-badge research-badge-type">{{ item.type }}</span>
-            {% endif %}
-            {% if item.venue %}
-              <span class="research-badge research-badge-venue">{{ item.venue }}</span>
-            {% endif %}
-          </div>
-
-          <h2 class="research_post-item-title">
-            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-          </h2>
-
+      <li class="entry">
+        <span class="entry-date">{{ item.date | date: "%Y" }}</span>
+        <div>
+          <a class="entry-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
           {% if item.authors %}
-            <p style="font-size: 13px; color: #64748b; margin: 0 0 6px 0;">
-              <strong>Authors:</strong> {{ item.authors }}
-            </p>
+            <p class="entry-authors">{{ item.authors | replace: "Priyal Tripathi", "<strong>Priyal Tripathi</strong>" }}</p>
           {% endif %}
-
-          {% if item.description %}
-            <p class="research_post-item-desc">{{ item.description }}</p>
-          {% else %}
-            <p class="research_post-item-desc">{{ item.excerpt | strip_html | truncatewords: 25 }}</p>
-          {% endif %}
-
-          <div class="research-links">
-            <a class="research-link-pill" href="{{ item.url | relative_url }}">
-              Read Overview →
-            </a>
-            {% if item.doi %}
-              <a class="research-link-pill" href="https://doi.org/{{ item.doi }}" target="_blank" rel="noopener noreferrer">
-                DOI ↗
-              </a>
-            {% endif %}
-            {% if item.paper_url and item.paper_url != "" %}
-              <a class="research-link-pill" href="{{ item.paper_url }}" target="_blank" rel="noopener noreferrer">
-                Paper ↗
-              </a>
-            {% endif %}
-            {% if item.code_url %}
-              <a class="research-link-pill" href="{{ item.code_url }}" target="_blank" rel="noopener noreferrer">
-                Code ↗
-              </a>
-            {% endif %}
-          </div>
-
-          {% if item.tags %}
-            <div class="research_post-item-tags" style="margin-top: 10px;">
-              {% for tag in item.tags %}
-                <span class="tag">#{{ tag }}</span>
-              {% endfor %}
-            </div>
-          {% endif %}
+          <p class="entry-venue">
+            {% if item.venue %}<em>{{ item.venue }}</em>{% endif %}{% if item.venue and item.type %}. {% endif %}{{ item.type }}
+          </p>
+          <p class="entry-links">
+            <a href="{{ item.url | relative_url }}">summary</a>
+            {% if item.paper_url and item.paper_url != "" %} · <a href="{{ item.paper_url }}" target="_blank" rel="noopener noreferrer">paper</a>{% endif %}
+            {% if item.doi %} · <a href="https://doi.org/{{ item.doi }}" target="_blank" rel="noopener noreferrer">doi</a>{% endif %}
+            {% if item.code_url %} · <a href="{{ item.code_url }}" target="_blank" rel="noopener noreferrer">code</a>{% endif %}
+          </p>
         </div>
-      </article>
+      </li>
     {% else %}
-      <p style="color: #64748b; font-style: italic;">No research published yet. Stay tuned!</p>
+      <li class="entry-empty">Nothing here yet.</li>
     {% endfor %}
-  </div>
+  </ul>
 
 </div>

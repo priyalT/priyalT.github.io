@@ -1,19 +1,21 @@
 ---
 layout: research
 title: "XGB-BIF: An XGBoost-Driven Biomarker Identification Framework for Detecting Cancer Using Human Genomic Data"
-date: 2025-06-15 12:00:00 +0530
+date: 2025-06-11
 type: "Journal Article"
 venue: "International Journal of Molecular Sciences (IJMS), Vol. 26, Issue 12"
 authors: "Veena Ghuriani, Jyotsna Talreja Wassan*, Priyal Tripathi, Anshika Chauhan"
 doi: "10.3390/ijms26125590"
 paper_url: "https://doi.org/10.3390/ijms26125590"
 tags: [machine-learning, xgboost, biomarker-discovery, cancer-genomics, transcriptomics]
-description: "A novel machine learning framework leveraging XGBoost feature ranking to discover robust genomic biomarkers across human cancer cohorts, attaining >90% classification accuracy."
+description: "A machine learning framework leveraging XGBoost feature ranking to discover robust genomic biomarkers across human cancer cohorts (breast cancer, lung cancer, and gastric cancer), attaining >90% classification accuracy."
 ---
 
 ## Overview
 
 High-throughput transcriptomic sequencing generates tens of thousands of gene expression features per sample, presenting a classic "curse of dimensionality" challenge (*p* >> *n*). In this peer-reviewed publication in the *International Journal of Molecular Sciences (IJMS)*, we introduce **XGB-BIF** (XGBoost-Driven Biomarker Identification Framework), an interpretable machine learning pipeline designed to isolate minimal, highly discriminative gene subsets for cancer detection.
+
+![XGB Framework](/assets/images/research/xgb_framework.png)
 
 ## Key Highlights & Contributions
 

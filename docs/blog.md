@@ -4,38 +4,25 @@ title: Blog
 permalink: /blog/
 ---
 
-<div class="academic-container">
+<div class="paper">
 
-  <header class="blog-index-header">
-    <h1>Blog & Notes</h1>
-    <p>Thoughts on computational biology, bioinformatics pipelines, paper summaries, and machine learning.</p>
-  </header>
+  <h1 class="paper-heading">Blog</h1>
+  <p class="paper-intro">Notes on computational biology, bioinformatics pipelines, papers I've been reading, and machine learning.</p>
 
-  <div class="posts-list">
+  <ul class="entry-list">
     {% for post in site.posts %}
-      <article class="post-item">
-        <time class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</time>
-        <div class="post-item-content">
-          <h2 class="post-item-title">
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          </h2>
+      <li class="entry">
+        <span class="entry-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <div>
+          <a class="entry-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
           {% if post.description %}
-            <p class="post-item-desc">{{ post.description }}</p>
-          {% else %}
-            <p class="post-item-desc">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
-          {% endif %}
-          {% if post.tags %}
-            <div class="post-item-tags">
-              {% for tag in post.tags %}
-                <span class="tag">#{{ tag }}</span>
-              {% endfor %}
-            </div>
+            <p class="entry-desc">{{ post.description }}</p>
           {% endif %}
         </div>
-      </article>
+      </li>
     {% else %}
-      <p style="color: #64748b; font-style: italic;">No posts published yet. Stay tuned!</p>
+      <li class="entry-empty">Nothing here yet.</li>
     {% endfor %}
-  </div>
+  </ul>
 
 </div>

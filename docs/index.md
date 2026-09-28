@@ -312,6 +312,7 @@ title: Home
       }, 350);
 
       box.scrollTop = box.scrollHeight;
+    };
 
     window.sendContactReply = function () {
       const replyHtml = `You can reach me via:<br><br>` +
@@ -326,8 +327,6 @@ title: Home
       const researchUrl = "{{ '/research/' | relative_url }}";
       const replyHtml = 'Right now I am focused on spatial transcriptomics. Previously, I have also worked in cancer biomarker discovery and machine learning. You can explore all my publications, conference presentations, and research projects on the <a href="' + researchUrl + '" style="color: #0055ea; font-weight: bold; text-decoration: underline;">Research ↗</a> page!';
       window.sendQuickReply('What is your research focus?', replyHtml);
-    };
-
     };
   })();
 </script>
