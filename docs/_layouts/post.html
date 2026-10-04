@@ -14,6 +14,11 @@ layout: blog_page
       {% if page.description %}
         <p class="paper-intro">{{ page.description }}</p>
       {% endif %}
+      {% if page.repo %}
+        <p class="post-repo">
+          <a href="{{ page.repo }}" target="_blank" rel="noopener">View this tutorial on GitHub →</a>
+        </p>
+      {% endif %}
 
     </header>
 
@@ -21,4 +26,27 @@ layout: blog_page
       {{ content }}
     </div>
   </article>
+
+  {% if page.comments %}
+  <section class="comments" id="comments">
+    <h2>Comments</h2>
+    <p class="comments-note">Sign in with GitHub to leave a comment or ask a question.</p>
+    <script src="https://giscus.app/client.js"
+            data-repo="priyalT/priyalT.github.io"
+            data-repo-id="R_kgDOUuUMeQ"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOUuUMec4DHBYp"
+            data-mapping="pathname"
+            data-strict="1"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </section>
+  {% endif %}
 </div>

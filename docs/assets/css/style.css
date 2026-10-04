@@ -859,3 +859,32 @@ body.blog-theme {
 #nav-links .retro-yellow-box {
   white-space: nowrap;
 }
+
+/* ---------- Post repo link & comments ---------- */
+
+.post-repo {
+  margin: 12px 0 0 0;
+  font-size: 0.95rem;
+}
+
+.post-repo a {
+  text-decoration: underline;
+}
+
+.comments {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #ddd;
+}
+
+.comments h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 0.5em 0;
+}
+
+.comments-note {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0 0 1em 0;
+}

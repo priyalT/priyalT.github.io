@@ -5,6 +5,8 @@ date: 2026-10-04
 description: "An easy-to-follow tutorial on bulk RNA-seq"
 tags: [rna-seq, bioinformatics]
 published: true
+repo: https://github.com/priyalT/snf2-rnaseq
+comments: true
 ---
 
 Bulk RNA-seq analysis is one of the most fundamental methods in transcriptomics. It is essentially used to quantify and compare gene expression between different conditions. Transcriptomic studies can have multiple applications, such as transcriptome assembly, refinement of gene models, metatranscriptomics, differential gene expression analysis, etc. In this series, we will walk through bulk RNA-seq analysis from raw reads to gene set enrichment analysis, all in less than 20 GB of storage. This first part takes us from raw reads to alignment.
