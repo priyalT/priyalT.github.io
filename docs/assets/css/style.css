@@ -609,6 +609,14 @@ a:hover {
   border-bottom-color: #999;
 }
 
+.prose .references {
+  font-size: 0.85rem;
+}
+
+.prose .references h3 {
+  font-size: 0.95rem;
+}
+
 .prose hr {
   border: 0;
   border-top: 1px solid #ddd;
