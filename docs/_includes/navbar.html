@@ -1,18 +1,21 @@
-<header class="surface py-4 inset-x-0 top-0 p-4 fixed">
+<header class="surface py-4 inset-x-0 top-0 p-4 fixed z-[1000]" id="site-header">
   <nav class="flex justify-between items-center w-[90%] mx-auto">
 
-    <div class="flex items-center gap-20">
-      <a href="{{ '/' | relative_url }}" class="w-16">
+    <div class="flex items-center gap-4 sm:gap-6 xl:gap-20 min-w-0">
+      <a href="{{ '/' | relative_url }}" class="w-12 sm:w-16 shrink-0">
         <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="Logo">
       </a>
-      <a href="{{ '/' | relative_url }}" class="w-28 flex items-center">
+      <a href="{{ '/' | relative_url }}" class="w-24 sm:w-28 flex items-center shrink-0">
         <img src="{{ '/assets/images/title.png' | relative_url }}" alt="Title">
       </a>
     </div>
 
-    <div class="nav-links duration-500 md:static absolute md:min-h-fit min-h-[60vh] 
-                left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
-      <ul class="flex md:flex-row flex-col md:items-center md:gap-[5vw] gap-8">
+    <button type="button" class="retro-yellow-box nav-toggle lg:hidden" id="nav-toggle"
+            aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+
+    <div class="nav-links hidden lg:flex lg:static absolute lg:min-h-fit
+                left-0 top-full lg:w-auto w-full items-center px-5 py-6 lg:py-0" id="nav-links">
+      <ul class="flex lg:flex-row flex-col lg:items-center lg:gap-4 xl:gap-[3vw] min-[1400px]:gap-[5vw] gap-6 items-center w-full lg:w-auto">
 
         <li>
           <a href="{{ '/' | relative_url }}" class="typewriter-box">
@@ -31,6 +34,18 @@
 </header>
 
 <script>
+  (function () {
+    const toggle = document.getElementById("nav-toggle");
+    const links = document.getElementById("nav-links");
+    if (toggle && links) {
+      toggle.addEventListener("click", function () {
+        const open = links.classList.toggle("hidden") === false;
+        links.classList.toggle("flex", open);
+        toggle.setAttribute("aria-expanded", String(open));
+      });
+    }
+  })();
+
   (function () {
     const phrases = [
       "Hi, I'm Priyal!",

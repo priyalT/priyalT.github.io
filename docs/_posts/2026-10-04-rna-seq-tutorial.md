@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How would bulk rna-seq look like with barely 20GB of remaining storage?"
-date: 2026-09-28
+date: 2026-10-04
 description: "An easy-to-follow tutorial on Bulk RNA-seq"
 tags: [rna-seq, bioinformatics, python]
 published: false
@@ -70,7 +70,7 @@ FastQC is a quality control tool for sequence data. We will run it for our raw s
 ```
 fastqc
 ```
-
+    
 
 
 ### Resources

@@ -23,7 +23,7 @@ title: Home
     </button>
   </div>
 
-  <button class="desktop-icon" id="icon-recycle" style="position: fixed; bottom: 90px; right: 24px; z-index: 5;">
+  <button class="desktop-icon" id="icon-recycle">
     <img src="{{ '/assets/images/recycle_bin.png' | relative_url }}" alt="Recycle Bin">
     <span>Recycle Bin</span>
   </button>
@@ -263,12 +263,25 @@ title: Home
   (function () {
     let highestZ = 100;
     document.querySelectorAll(".desktop-workspace .window").forEach(function (win) {
-      win.addEventListener("mousedown", function () {
+      win.addEventListener("pointerdown", function () {
         highestZ++;
         win.style.zIndex = highestZ;
         document.querySelectorAll(".desktop-workspace .window").forEach(w => w.classList.remove("active"));
         win.classList.add("active");
       });
+    });
+    // Keep a window inside the visible desktop area (e.g. on narrower screens)
+    function clampWindow(win) {
+      if (window.matchMedia("(max-width: 767px)").matches) return;
+      const ws = win.offsetParent;
+      if (!ws) return;
+      const maxLeft = Math.max(0, ws.clientWidth - win.offsetWidth);
+      if (win.offsetLeft > maxLeft) win.style.left = maxLeft + "px";
+      if (win.offsetLeft < 0) win.style.left = "0px";
+      if (win.offsetTop < 0) win.style.top = "0px";
+    }
+    window.addEventListener("resize", function () {
+      document.querySelectorAll(".desktop-workspace .window:not(.hidden)").forEach(clampWindow);
     });
     function bindIcon(iconId, windowId) {
       const icon = document.getElementById(iconId);
@@ -276,6 +289,7 @@ title: Home
       if (!icon || !win) return;
       icon.addEventListener("click", function () {
         win.classList.remove("hidden");
+        clampWindow(win);
         highestZ++;
         win.style.zIndex = highestZ;
         document.querySelectorAll(".desktop-workspace .window").forEach(w => w.classList.remove("active"));
@@ -306,8 +320,9 @@ title: Home
       if (!titleBar) return;
       let isDragging = false;
       let startX = 0, startY = 0, initialLeft = 0, initialTop = 0;
-      titleBar.addEventListener("mousedown", function (e) {
+      titleBar.addEventListener("pointerdown", function (e) {
         if (e.target.closest(".title-bar-controls")) return;
+        if (window.matchMedia("(max-width: 767px)").matches) return;
         isDragging = true;
         highestZ++;
         win.style.zIndex = highestZ;
@@ -326,11 +341,11 @@ title: Home
         }
         function onMouseUp() {
           isDragging = false;
-          document.removeEventListener("mousemove", onMouseMove);
-          document.removeEventListener("mouseup", onMouseUp);
+          document.removeEventListener("pointermove", onMouseMove);
+          document.removeEventListener("pointerup", onMouseUp);
         }
-        document.addEventListener("mousemove", onMouseMove);
-        document.addEventListener("mouseup", onMouseUp);
+        document.addEventListener("pointermove", onMouseMove);
+        document.addEventListener("pointerup", onMouseUp);
       });
     });
 
