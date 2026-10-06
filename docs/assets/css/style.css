@@ -573,21 +573,48 @@ a:hover {
 
 .prose code,
 .prose pre {
-  font-family: Menlo, Consolas, "Courier New", monospace;
+  font-family: "JetBrains Mono", Menlo, Consolas, "Courier New", monospace;
   font-size: 0.8em;
 }
 
 .prose pre {
   margin: 1.4em 0;
-  padding: 12px 16px;
-  background: #f3f1ea;
+  padding: 14px 18px;
+  background: #1e2230;
+  color: #e6e9f0;
+  border-radius: 8px;
+  border: 1px solid #2c3242;
   overflow-x: auto;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .prose pre code {
   font-size: 1em;
+  background: none;
+  color: inherit;
 }
+
+/* Syntax colours for Rouge (```bash, ```r, etc.) on the dark code blocks */
+.prose .highlight .c,
+.prose .highlight .c1,
+.prose .highlight .cm { color: #7f8798; font-style: italic; }
+.prose .highlight .k,
+.prose .highlight .kd,
+.prose .highlight .kn,
+.prose .highlight .kr { color: #c792ea; }
+.prose .highlight .s,
+.prose .highlight .s1,
+.prose .highlight .s2,
+.prose .highlight .sb { color: #a5d6a7; }
+.prose .highlight .m,
+.prose .highlight .mi,
+.prose .highlight .mf { color: #f7b267; }
+.prose .highlight .nf,
+.prose .highlight .nb { color: #82aaff; }
+.prose .highlight .nv,
+.prose .highlight .vg { color: #f07178; }
+.prose .highlight .o,
+.prose .highlight .se { color: #89ddff; }
 
 .prose table {
   display: block;
