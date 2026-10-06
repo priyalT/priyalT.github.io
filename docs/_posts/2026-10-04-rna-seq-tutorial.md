@@ -193,7 +193,7 @@ The header section is an optional section within the file and usually contains t
 
 More information regarding the format can be found in the [SAM specification](https://samtools.github.io/hts-specs/SAMv1.pdf).
 
-The next steps are to construct a count matrix, perform further analysis, and wrap our pipeline within Nextflow. I will be covering those in further parts. Stay tuned!
+The next steps are to construct a count matrix, perform further analysis, and wrap our pipeline within Nextflow. Check out [part II](https://priyalt.github.io/2026/10/05/rna-seq-tutorial-part-2.html) for more.
 
 <div class="references" markdown="1">
 
